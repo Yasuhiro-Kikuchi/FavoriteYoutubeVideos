@@ -1,0 +1,37 @@
+<h1>Videoposts#add</h1>
+<p>※ブログの記事の投稿</p>
+<% if @videopost.errors.full_messages.each do |err| %>
+<ul>
+    <%= err %>
+<% end %>
+</ul>
+<% end %>
+<table>
+    <%= form_for(@videopost, url: {controller:"videoposts", action:"add"}) do |form|%>
+    <tr><th>Title</th>
+        <td><%= form.text_field :title %></td></tr>
+        <tr><th>URL</th>
+        <td><%= form.text_field :url %></td></tr>
+    <tr><th>Read</th>
+        <td><%= form.text_field :read %></td></tr>
+    <tr><th>Content</th>
+        <td><%= form.text_area :content, {cols:40, rows:10} %></td></tr>
+    <tr><th>Videogenre_id</th>
+        <td><%= form.text_field :videogenre_id %></td></tr>
+    <tr><th></th>
+        <td><%= form.submit "送信" %></td></tr>
+    <% end %>
+</table>
+<hr>
+<p>※ジャンルの一覧</p>
+<table>
+    <tr>
+        <th>Id</th><th>Genre</th>
+    </tr>
+        <% @genres.each do |obj| %>
+        <tr>
+            <td><%= obj.id %></td>
+            <td><%= obj.name %></td>
+    </tr>
+    <% end %>
+</table>

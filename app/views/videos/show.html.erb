@@ -1,0 +1,13 @@
+<h3 class="show_title"><%= @videopost.title %></h3>
+<p class="show_read"><%= @videopost.read + "[" + @videopost.videogenre.name + "]" %></p>
+
+<iframe width="560" height="315" src="<%= @videopost.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<% contents = @videopost.content.split("\n") %>
+<div class="show_content">
+<% contents.each do |paragraph| %>
+<!--なぜeachで出力しているのか-->
+    <p><%= paragraph %></p>
+<% end %>
+</div>
+<p class="show_created">(<%= @videopost.created_at %>)</p>

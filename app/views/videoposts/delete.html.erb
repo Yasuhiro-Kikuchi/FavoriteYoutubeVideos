@@ -1,0 +1,16 @@
+<h1>Videoposts#delete</h1>
+<p>※以下を削除してもいいですか？</p>
+<table>
+    <tr><th>Id</th>
+        <td><%= @videopost.id %></td></tr>
+    <tr><th>Title</th>
+        <td><%= @videopost.title %></td></tr>
+    <tr><th>Read</th>
+        <td><%= @videopost.read %></td></tr>
+    <tr><th>Content</th>
+        <td><%= @videopost.content %></td></tr>
+</table>
+<%= form_tag controller: "videoposts", action: "delete" do %>
+    <%= hidden_field_tag "id", {value: @videopost.id} %>
+    <%= submit_tag "送信" %>
+<% end %>

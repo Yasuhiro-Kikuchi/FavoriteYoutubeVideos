@@ -1,0 +1,16 @@
+<h1>Videogenres#index</h1>
+<p>※ジャンル・データの一覧</p>
+<table>
+    <tr>
+        <th>Id</th><th>name</th><th>memo</th><th></th>
+    </tr>
+    <% @data.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><%= obj.name %></td>
+        <td><%= obj.memo %></td>
+        <td><a href="/videogenres/<%= obj.id%>">Edit</a></td>
+    </tr>
+    <% end %>
+</table>
+<p><a href="/videogenres/add">新規作成</a></p>

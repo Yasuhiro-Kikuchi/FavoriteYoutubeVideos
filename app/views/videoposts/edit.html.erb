@@ -1,0 +1,38 @@
+<h1>Videoposts#edit</h1>
+<p>※「<%= @videopost.title %>」の編集</p>
+<% if @videopost.errors.any? %>
+<ul>
+    <% @videopost.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+    <% end %>
+</ul>
+<% end %>
+<table>
+    <%= form_for(@videopost, url:{controller:"videoposts", action:"edit"}) do |form| %>
+    <tr><th>name</th>
+        <td><%= form.text_field :title %></td></tr>
+    <tr><th>URL</th>
+        <td><%= form.text_field :url %></td></tr>
+    <tr><th>memo</th>
+        <td><%= form.text_field :read %></td></tr>
+    <tr><th>message</th>
+        <td><%= form.text_area :content,{cols:40, rows:10} %></td></tr>
+        <tr><th>Genre ID</th>
+        <td><%= form.text_field :videogenre_id %></td></tr>
+    <tr><th></th>
+        <td><%= form.submit "送信" %></td></tr>
+    <% end %>
+</table>
+<hr>
+<p>※ジャンルの一覧</p>
+<table>
+    <tr>
+        <th>Id</th><th>Genre</th>
+    </tr>
+    <% @genres.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><%= obj.name %></td>
+    </tr>
+    <% end %>
+</table>

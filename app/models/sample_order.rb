@@ -1,0 +1,2 @@
+class SampleOrder < ApplicationRecord
+end

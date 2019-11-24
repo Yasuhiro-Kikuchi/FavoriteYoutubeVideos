@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RailsApp</title>
+            <%= csrf_meta_tags %>
+            <%= stylesheet_link_tag "videos",
+                "data-turbolinks-track": "reload" %>
+            <%= stylesheet_link_tag @videoconfig.stylename,
+                "data-turbolinks-track": "reload" %>
+            <%= javascript_include_tag "videos",
+                "data-turbolinks-track": "reload" %>
+    </head>
+    
+    <body>
+        <header id="header">
+            <h1><a href="/videos"><%= @videoconfig.title %></a></h1>
+            <h2><%= @videoconfig.subtitle %></h2>
+        <div class="genre">
+            <% Videogenre.all.each do |genre| %>
+            <p><a href="/videos/genre/<%= genre.id %>"><%= genre.name %></a></p>
+            <% end %>
+        </div>
+        </header>
+        <hr>
+        <main id="main">
+            <%= yield %>
+        </main>
+    </body>
+</html>

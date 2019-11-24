@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RailsApp</title>
+        <%= csrf_meta_tags %>
+        
+        <%= stylesheet_link_tag "videoposts",
+            "data_turbolinks-track": "reload" %>
+        <%= javascript_include_tag "videoposts",
+            "data_turbolinks-track": "reload" %>
+    </head>
+    
+    <body>
+        <%= yield %>
+    </body>
+    
+</html>

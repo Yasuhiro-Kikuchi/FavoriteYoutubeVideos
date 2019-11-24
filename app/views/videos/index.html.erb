@@ -1,0 +1,10 @@
+<% @data.each do |obj| %>
+    <div class="articles">
+            <h3 class="top_title"><a href="/videos/show/<%= obj.id %>"><%= obj.title.length > 19 ? obj.title[0..17].concat("...") : obj.title %></a></h3>
+            <iframe width="350" height="200" src="<%= obj.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="top_read"><%= obj.read %><span class="top_created">(<%= obj.created_at %>)</span></p>
+    </div>
+<% end %>
+<div class="navigate">
+    <%= paginate @data %>
+</div>

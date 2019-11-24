@@ -1,0 +1,19 @@
+<h1>Videogenres#edit</h1>
+<p>※「<%= @videogenre.name %>ジャンルの編集」</p>
+<% if @videogenre.errors.any? %>
+<ul>
+    <% @videogenre.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+    <% end %>
+</ul>
+<% end %>
+<table>
+    <%= form_for(@videogenre, url:{controller: "videogenres",action:"edit"}) do |form| %>
+    <tr><th>Title</th>
+        <td><%= form.text_field :name %></td></tr>
+    <tr><th>Memo</th>
+        <td><%= form.text_field :memo %></td></tr>
+    <tr><th></th>
+        <td><%= form.submit "送信" %></td></tr>
+    <% end %>
+</table>

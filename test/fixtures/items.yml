@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  load: 1
+  times: 1
+  total: 1
+
+two:
+  content: MyText
+  load: 1
+  times: 1
+  total: 1
