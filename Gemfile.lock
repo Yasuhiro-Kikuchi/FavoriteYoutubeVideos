@@ -84,6 +84,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
+    pg (1.1.4)
     puma (3.12.1)
     rack (2.0.7)
     rack-test (0.6.3)
@@ -168,6 +169,7 @@ DEPENDENCIES
   jquery-rails
   kaminari (~> 0.17.0)
   listen (~> 3.0.5)
+  pg
   puma (~> 3.0)
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
